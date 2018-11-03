@@ -1,0 +1,15 @@
+subprojects {
+  apply plugin: 'java'
+
+  sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
+  repositories {
+    jcenter()
+  }
+
+  dependencies {
+    compile 'org.scala-lang:scala-library:2.11.7'
+    testCompile 'org.scala-lang:scala-library:2.11.7'
+  }
+}

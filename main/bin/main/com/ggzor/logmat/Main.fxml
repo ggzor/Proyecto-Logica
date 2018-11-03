@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
+
+<VBox fx:id="contenedor" alignment="TOP_CENTER" styleClass="principal" stylesheets="@./Main.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ggzor.logmat.Main">
+   <children>
+      <JFXTextField fx:id="entrada" promptText="Fórmula Lógica" styleClass="entrada" />
+      <VBox alignment="BASELINE_LEFT">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <FlowPane alignment="CENTER" hgap="5.0" prefWrapLength="380.0" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.26), 10, 0.12, -1, 2); -fx-background-color: white; -fx-background-radius: 10 10 10 10;" vgap="5.0">
+                     <children>
+                        <FlowPane alignment="CENTER_LEFT" prefWrapLength="225.0">
+                           <children>
+                              <JFXButton onAction="#agregarSimbolo" styleClass="btn-simbolo" text="¬" />
+                              <JFXButton onAction="#agregarSimbolo" styleClass="btn-simbolo" text="∧" />
+                              <JFXButton onAction="#agregarSimbolo" styleClass="btn-simbolo" text="∨" />
+                              <JFXButton onAction="#agregarSimbolo" styleClass="btn-simbolo" text="⇒" />
+                              <JFXButton onAction="#agregarSimbolo" styleClass="btn-simbolo" text="⇔" />
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" prefWrapLength="90.0">
+                           <children>
+                              <JFXButton onAction="#agregarSimbolo" text="(">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-parentesis" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton onAction="#agregarSimbolo" text=")">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-parentesis" />
+                                 </styleClass>
+                              </JFXButton>
+                           </children>
+                        </FlowPane>
+                        <FlowPane alignment="CENTER_LEFT" hgap="12.0" vgap="6.0" prefWrapLength="216.0">
+                           <children>
+                              <JFXButton onAction="#retrocederPalabra" text="&lt;">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-navegacion" />
+                                    <String fx:value="btn-accion" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton onAction="#avanzarPalabra" text="&gt;">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-navegacion" />
+                                    <String fx:value="btn-accion" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton onAction="#borrarPalabra" text="⌫">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-accion" />
+                                    <String fx:value="btn-del" />
+                                 </styleClass>
+                              </JFXButton>
+                              <JFXButton onAction="#borrarTodo" text="✖">
+                                 <styleClass>
+                                    <String fx:value="btn-simbolo" />
+                                    <String fx:value="btn-accion" />
+                                    <String fx:value="btn-limpiar" />
+                                 </styleClass>
+                              </JFXButton>
+                           </children>
+                        </FlowPane>
+                     </children>
+                     <padding>
+                        <Insets top="4.0" bottom="4.0"/>
+                     </padding>
+                  </FlowPane>
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="12.0" />
+         </VBox.margin>
+      </VBox>
+      <Label fx:id="error" styleClass="error">
+         <VBox.margin>
+            <Insets top="12.0" bottom="12.0"/>
+         </VBox.margin>
+      </Label>
+      <JFXButton fx:id="boton" buttonType="RAISED" defaultButton="true" onAction="#calcularResultado" styleClass="btn-evaluar" text="Evaluar" />
+   </children>
+   <padding>
+      <Insets bottom="24.0" left="24.0" right="24.0" top="40.0" />
+   </padding>
+</VBox>

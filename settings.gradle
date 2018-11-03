@@ -1,0 +1,2 @@
+rootProject.name = 'Lógica'
+include 'main', 'library'
